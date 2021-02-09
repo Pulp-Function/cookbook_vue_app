@@ -29,7 +29,11 @@
     <dialog id="recipe-details">
       <form method="dialog">
         <h1>Recipe info</h1>
-        <p>Title: ...</p>
+        <p>Title: {{ currentRecipe.title }}</p>
+        <p>chef: {{ currentRecipe.chef }}</p>
+        <p>ingredients: {{ currentRecipe.ingredients }}</p>
+        <p>directions: {{ currentRecipe.directions }}</p>
+        <p>prep_time: {{ currentRecipe.prep_time }}</p>
         <button>Close</button>
       </form>
     </dialog>
@@ -55,6 +59,7 @@ export default {
       newRecipeIngredients: "",
       newRecipeDirections: "",
       newRecipeImageUrl: "",
+      currentRecipe: {},
     };
   },
   created: function() {
@@ -87,6 +92,7 @@ export default {
     },
     showRecipe: function(recipe) {
       console.log("showRecipe", recipe.title, recipe);
+      this.currentRecipe = recipe;
       document.querySelector("#recipe-details").showModal();
     },
   },
