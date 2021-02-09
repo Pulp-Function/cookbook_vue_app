@@ -2,6 +2,18 @@
   <div class="home">
     <div>
       <h1>New Recipe</h1>
+      Title:
+      <input type="text" v-model="newRecipeTitle" />
+      Chef:
+      <input type="text" v-model="newRecipeChef" />
+      Prep time:
+      <input type="text" v-model="newRecipePrepTime" />
+      Ingredients:
+      <input type="text" v-model="newRecipeIngredients" />
+      Directions:
+      <input type="text" v-model="newRecipeDirections" />
+      Image url:
+      <input type="text" v-model="newRecipeImageUrl" />
       <button v-on:click="createRecipe()">Create</button>
     </div>
     <h1>All recipes</h1>
@@ -26,6 +38,12 @@ export default {
   data: function() {
     return {
       recipes: [],
+      newRecipeTitle: "",
+      newRecipeChef: "",
+      newRecipePrepTime: "",
+      newRecipeIngredients: "",
+      newRecipeDirections: "",
+      newRecipeImageUrl: "",
     };
   },
   created: function() {
@@ -41,12 +59,12 @@ export default {
     createRecipe: function() {
       console.log("createRecipe");
       var params = {
-        title: "example title",
-        chef: "example chef",
-        prep_time: 32,
-        ingredients: "one, two, three",
-        directions: "cook, serve",
-        image_url: "example image",
+        title: this.newRecipeTitle,
+        chef: this.newRecipeChef,
+        prep_time: this.newRecipePrepTime,
+        ingredients: this.newRecipeIngredients,
+        directions: this.newRecipeDirections,
+        image_url: this.newRecipeImageUrl,
       };
       axios
         .post("/api/recipes", params)
