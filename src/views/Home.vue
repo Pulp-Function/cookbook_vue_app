@@ -4,11 +4,16 @@
     <div v-for="recipe in recipes" v-bind:key="recipe.id">
       <h2>Title: {{ recipe.title }}</h2>
       <p>Chef: {{ recipe.chef }}</p>
+      <img v-bind:src="recipe.image_url" alt="" />
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+img {
+  width: 250px;
+}
+</style>
 
 <script>
 import axios from "axios";
