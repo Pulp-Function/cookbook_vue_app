@@ -50,6 +50,7 @@
           <input type="text" v-model="currentRecipe.prep_time" />
         </p>
         <button v-on:click="updateRecipe(currentRecipe)">Update</button>
+        <button v-on:click="destroyRecipe(currentRecipe)">Destroy</button>
         <button>Close</button>
       </form>
     </dialog>
@@ -123,6 +124,13 @@ export default {
       // axios.patch("/api/recipes/" + recipe.id, params).then(response => {
       axios.patch(`/api/recipes/${recipe.id}`, params).then(response => {
         console.log("Updated successfully", response.data);
+      });
+    },
+    destroyRecipe: function(recipe) {
+      axios.delete("/api/recipes/" + recipe.id).then(response => {
+        console.log("Destroyed successfully", response.data);
+        var index = this.recipes.indexOf(recipe);
+        this.recipes.splice(index, 1);
       });
     },
   },
