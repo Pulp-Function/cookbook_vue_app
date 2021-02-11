@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     showRecipe: function() {
-      axios.get("/api/recipes/1").then(response => {
+      axios.get("/api/recipes/" + this.$route.params.id).then(response => {
         console.log(response.data);
         this.recipe = response.data;
       });
