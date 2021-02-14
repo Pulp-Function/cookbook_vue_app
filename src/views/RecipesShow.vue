@@ -4,6 +4,8 @@
     <h4>{{ recipe.chef }}</h4>
     <p>{{ recipe.ingredients }}</p>
     <p>{{ recipe.directions }}</p>
+    <a v-bind:href="`/recipes/${recipe.id}/edit`">Edit this recipe</a>
+    <br />
     <a href="/recipes">Back to all recipes</a>
   </div>
 </template>
