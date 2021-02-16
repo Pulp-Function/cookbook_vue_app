@@ -78,4 +78,8 @@
   </div>
 </template>
 
-<style></style>
+<style>
+body {
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
+</style>
