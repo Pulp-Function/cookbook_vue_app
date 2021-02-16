@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Cookr</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -79,8 +79,15 @@
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+
 body {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
   background-image: url("./assets/retina_wood.png");
+}
+
+.navbar-brand {
+  font-family: "Monoton", cursive;
+  font-size: 5em;
 }
 </style>
