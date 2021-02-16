@@ -19,7 +19,8 @@
 
 <style>
 img {
-  width: 250px;
+  object-fit: cover;
+  height: 250px;
 }
 </style>
 
