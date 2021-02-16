@@ -81,5 +81,6 @@
 <style>
 body {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  background-image: url("./assets/retina_wood.png");
 }
 </style>
