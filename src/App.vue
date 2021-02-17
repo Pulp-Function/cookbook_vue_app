@@ -73,6 +73,7 @@
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
     </div>
     <div class="container">
+      <div v-if="flashMessage" class="alert alert-success">{{ flashMessage }}</div>
       <router-view />
     </div>
   </div>
@@ -94,6 +95,11 @@ body {
 
 <script>
 export default {
+  data: function() {
+    return {
+      flashMessage: "",
+    };
+  },
   methods: {
     isLoggedIn: function() {
       return localStorage.getItem("jwt");
