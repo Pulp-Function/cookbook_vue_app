@@ -80,7 +80,7 @@
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap&text=Cookr");
 
 body {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
