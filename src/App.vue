@@ -73,7 +73,7 @@
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
     </div>
     <div class="container">
-      <div v-if="flashMessage" class="alert alert-success">{{ flashMessage }}</div>
+      <div v-if="flashMessage" v-on:click="flashMessage = ''" class="alert alert-success">{{ flashMessage }}</div>
       <router-view />
     </div>
   </div>
