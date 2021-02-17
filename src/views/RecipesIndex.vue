@@ -3,7 +3,10 @@
     <h1>All recipes</h1>
 
     Search by title:
-    <input v-model="titleFilter" type="text" />
+    <input v-model="titleFilter" type="text" list="recipe-titles" />
+    <datalist id="recipe-titles">
+      <option v-for="recipe in recipes" v-bind:key="recipe.id">{{ recipe.title }}</option>
+    </datalist>
 
     <div class="row">
       <div class="col-sm-3" v-for="recipe in filterBy(recipes, titleFilter, 'title')" v-bind:key="recipe.id">
