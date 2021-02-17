@@ -1,6 +1,6 @@
 <template>
   <div class="signup">
-    <img v-if="status" v-bind:src="`https://http.cat/${status}`" alt="" />
+    <img v-if="status" v-bind:src="`https://http.cat/${status}`" v-on:click="status = ''" alt="" />
     <form v-on:submit.prevent="createRecipe()">
       <h1>New Recipe</h1>
       <ul>
