@@ -66,11 +66,11 @@
       |
       <router-link to="/recipes/new">New Recipe</router-link>
       |
-      <router-link to="/signup">Signup</router-link>
+      <router-link v-if="!isLoggedIn()" to="/signup">Signup</router-link>
       |
-      <router-link to="/login">Login</router-link>
+      <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
       |
-      <router-link to="/logout">Logout</router-link>
+      <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
     </div>
     <div class="container">
       <router-view />
@@ -91,3 +91,13 @@ body {
   font-size: 5em;
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function() {
+      return localStorage.getItem("jwt");
+    },
+  },
+};
+</script>
