@@ -2,8 +2,11 @@
   <div class="home">
     <h1>All recipes</h1>
 
+    Search by title:
+    <input v-model="titleFilter" type="text" />
+
     <div class="row">
-      <div class="col-sm-3" v-for="recipe in recipes" v-bind:key="recipe.id">
+      <div class="col-sm-3" v-for="recipe in filterBy(recipes, titleFilter, 'title')" v-bind:key="recipe.id">
         <div class="card">
           <img v-bind:src="recipe.image_url" class="card-img-top" alt="..." />
           <div class="card-body">
@@ -26,11 +29,14 @@ img {
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       recipes: [],
+      titleFilter: "",
     };
   },
   created: function() {
