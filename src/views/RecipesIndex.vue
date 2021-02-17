@@ -13,7 +13,7 @@
       class="row"
       appear
       enter-active-class="animated fadeIn"
-      leave-active-class="animated bounceOut"
+      leave-active-class="animated myFadeOut"
     >
       <div class="col-sm-3" v-for="recipe in filterBy(recipes, titleFilter, 'title')" v-bind:key="recipe.id">
         <div class="card">
@@ -33,6 +33,11 @@
 img {
   object-fit: cover;
   height: 250px;
+}
+
+.myFadeOut {
+  transition: opacity 3s ease;
+  opacity: 0;
 }
 </style>
 
