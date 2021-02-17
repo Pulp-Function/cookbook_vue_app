@@ -20,6 +20,7 @@
     <div v-for="recipe in recipes" v-bind:key="recipe.id">
       <h2>Title: {{ recipe.title }}</h2>
       <p>Chef: {{ recipe.chef }}</p>
+      <p>Is owner??? {{ recipe.is_owner }}</p>
       <img v-bind:src="recipe.image_url" alt="" />
       <div>
         <button v-on:click="showRecipe(recipe)">More info</button>
@@ -49,8 +50,8 @@
           prep_time:
           <input type="text" v-model="currentRecipe.prep_time" />
         </p>
-        <button v-on:click="updateRecipe(currentRecipe)">Update</button>
-        <button v-on:click="destroyRecipe(currentRecipe)">Destroy</button>
+        <button v-if="currentRecipe.is_owner" v-on:click="updateRecipe(currentRecipe)">Update</button>
+        <button v-if="currentRecipe.is_owner" v-on:click="destroyRecipe(currentRecipe)">Destroy</button>
         <button>Close</button>
       </form>
     </dialog>
