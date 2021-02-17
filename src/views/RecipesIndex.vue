@@ -8,7 +8,13 @@
       <option v-for="recipe in recipes" v-bind:key="recipe.id">{{ recipe.title }}</option>
     </datalist>
 
-    <div class="row">
+    <div
+      is="transition-group"
+      class="row"
+      appear
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated bounceOut"
+    >
       <div class="col-sm-3" v-for="recipe in filterBy(recipes, titleFilter, 'title')" v-bind:key="recipe.id">
         <div class="card">
           <img v-bind:src="recipe.image_url" class="card-img-top" alt="..." />
